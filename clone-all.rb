@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-projets = ["mongolink-parent", "mongolink-testtools", "mongolink", "mongolink-test", "mongolink-integrationtests"]
+projets = ["mongolink-parent", "mongolink-testtools", "mongolink", "mongolink-test", "mongolink-integrationtests", "mongolink.github.com"]
 
 Dir.chdir("..")
 projets.each do |projet|
