@@ -33,12 +33,13 @@ versionDeveloppementCourante = "#{ARGV[0]}-SNAPSHOT"
 versionDeveloppementSuivante = ARGV[1]
 
 release("mongolink-parent", version, versionDeveloppementSuivante)
-change_version_parent("mongolink-testtools", versionDeveloppementCourante, version)
-change_version_parent("mongolink", versionDeveloppementCourante, version)
-change_version_parent("mongolink-test", versionDeveloppementCourante, version)
-release("mongolink-testtools", version, versionDeveloppementSuivante)
-release("mongolink", version, versionDeveloppementSuivante)
-release("mongolink-test", version, versionDeveloppementSuivante)
-change_version_parent("mongolink-testtools", version, versionDeveloppementSuivante)
-change_version_parent("mongolink", version, versionDeveloppementSuivante)
-change_version_parent("mongolink-test", version, versionDeveloppementSuivante)
+projets = ["mongolink-testtools", "mongolink", "mongolink-test", "mongolink-integrationtests"]
+projets.each do |projet|
+	change_version_parent(projet, versionDeveloppementCourante, version)
+end
+projets.each do |projet|
+	release(projet, version, versionDeveloppementSuivante)
+end
+projets.each do |projet|
+	change_version_parent(projet, version, versionDeveloppementSuivante)
+end
