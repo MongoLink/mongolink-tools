@@ -4,7 +4,7 @@ projets = ["mongolink-parent", "mongolink-testtools", "mongolink", "mongolink-te
 
 projets.each do |projet|
 	Dir.chdir("../#{projet}")
-	if not system "git pull origin master"
+	if not system "git pull --rebase origin master"
 		exit
 	end
 end
