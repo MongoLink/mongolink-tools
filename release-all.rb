@@ -32,8 +32,8 @@ version = ARGV[0]
 versionDeveloppementCourante = "#{ARGV[0]}-SNAPSHOT"
 versionDeveloppementSuivante = ARGV[1]
 
-release("mongolink-parent", version, versionDeveloppementSuivante)
-projets = ["mongolink-testtools", "mongolink", "mongolink-integrationtests", "mongolink-example"]
+release("mongolink", version, versionDeveloppementSuivante)
+projets = ["mongolink-integrationtests", "mongolink-example"]
 projets.each do |projet|
 	change_version_parent(projet, versionDeveloppementCourante, version)
 end
